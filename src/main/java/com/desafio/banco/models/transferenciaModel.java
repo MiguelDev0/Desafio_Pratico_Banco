@@ -1,11 +1,8 @@
 package com.desafio.banco.models;
 
 import java.util.Date;
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "transferencia")
-public class transferencia {
+public class transferenciaModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,7 +25,7 @@ public class transferencia {
     @Column(length = 50)
     private String nome_operador_transacao;
     @Id
-    private conta id_conta;
+    private contaModel id_conta;
     
     public int getId() {
         return id;
@@ -54,10 +51,10 @@ public class transferencia {
     public void setNome_operador_transacao(String nome_operador_transacao) {
         this.nome_operador_transacao = nome_operador_transacao;
     }
-    public conta getId_conta() {
+    public contaModel getId_conta() {
         return id_conta;
     }
-    public void setId_conta(conta id_conta) {
+    public void setId_conta(contaModel id_conta) {
         this.id_conta = id_conta;
     }
 
