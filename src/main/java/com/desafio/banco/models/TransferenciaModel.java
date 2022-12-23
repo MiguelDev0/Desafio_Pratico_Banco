@@ -6,11 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "transferencia")
-public class transferenciaModel {
+public class TransferenciaModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,10 +24,14 @@ public class transferenciaModel {
     @Column(nullable = false)
     private Double valor;
 
+    @Column(nullable = false, length = 15)
+    private String tipo;
+
     @Column(length = 50)
     private String nome_operador_transacao;
-    @Id
-    private contaModel id_conta;
+    @ManyToOne
+    @JoinColumn(name = "id_conta")
+    private ContaModel contaModel;
     
     public int getId() {
         return id;
@@ -51,11 +57,11 @@ public class transferenciaModel {
     public void setNome_operador_transacao(String nome_operador_transacao) {
         this.nome_operador_transacao = nome_operador_transacao;
     }
-    public contaModel getId_conta() {
-        return id_conta;
+    public ContaModel getId_conta() {
+        return contaModel;
     }
-    public void setId_conta(contaModel id_conta) {
-        this.id_conta = id_conta;
+    public void setId_conta(ContaModel id_conta) {
+        contaModel = id_conta;
     }
 
 }

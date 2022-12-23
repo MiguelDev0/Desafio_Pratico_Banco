@@ -8,14 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "conta")
-public class contaModel implements Serializable{
+public class ContaModel implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
+    @PrimaryKeyJoinColumn
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id_conta;
     @Column(nullable = false, length = 50)

@@ -3,11 +3,9 @@ package com.desafio.banco.repositories;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import com.desafio.banco.models.contaModel;
+import com.desafio.banco.models.ContaModel;
 
-@Repository
-public interface ContaRepository  extends JpaRepository<contaModel, UUID>{
+public interface ContaRepository  extends JpaRepository<ContaModel, UUID>{
     
 }
